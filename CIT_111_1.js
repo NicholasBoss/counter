@@ -1,6 +1,20 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native'; // importing components
+// import audio
+import { Audio } from 'expo-av';
 
+const my_button_sound = require('./assets/buttonpress.wav');
+const soundObject = new Audio.Sound();
+var load = false;
+const playsound = async () => {
+    // preload sound
+    if (load === false) {
+      await soundObject.loadAsync(my_button_sound);
+      load = true;
+      // Your sound is playing!
+    } 
+    await soundObject.replayAsync(my_button_sound);
+  }
 // About screen contains the text “You are on the about page” and a button.
 class CIT_111_1 extends Component {
     constructor(props) {
@@ -16,6 +30,8 @@ class CIT_111_1 extends Component {
     decreaseNumberby1 = () => {
         this.setState((prevState) => {
           // Check if the number is greater than 0 before decreasing it
+          // make a sound when button is pressed
+          playsound();
           const newNumber = prevState.highnumber > 0 ? prevState.highnumber - 1 : 0;
           return { highnumber: newNumber < 0 ? 0 : newNumber, lownumber: prevState.lownumber + 1 > 34 ? 34 : prevState.lownumber + 1 };
         });

@@ -1,5 +1,19 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native'; // importing components
+import { Audio } from 'expo-av';
+
+let my_button_sound = require('./assets/buttonpress.wav');
+let soundObject = new Audio.Sound();
+var load = false;
+let playsound = async () => {
+    // preload sound
+    if (load === false) {
+      await soundObject.loadAsync(my_button_sound);
+      load = true;
+      // Your sound is playing!
+    } 
+    await soundObject.replayAsync(my_button_sound);
+  }
 
 // About screen contains the text “You are on the about page” and a button.
 class CIT_111_2 extends Component {
@@ -16,32 +30,36 @@ class CIT_111_2 extends Component {
     decreaseNumberby1 = () => {
         this.setState((prevState) => {
           // Check if the number is greater than 0 before decreasing it
+          playsound();
           const newNumber = prevState.highnumber > 0 ? prevState.highnumber - 1 : 0;
           return { highnumber: newNumber < 0 ? 0 : newNumber, lownumber: prevState.lownumber + 1 > 34 ? 34 : prevState.lownumber + 1 };
         });
       };
 
-    decreaseNumberby5 = () => {
+    decreaseNumberby6 = () => {
         this.setState((prevState) => {
           // Check if the number is greater than 0 before decreasing it
-          const newNumber = prevState.highnumber > 0 ? prevState.highnumber - 5 : 0;
-          return { highnumber: newNumber < 0 ? 0 : newNumber, lownumber: prevState.lownumber + 5 > 34 ? 34 : prevState.lownumber + 5 };
+          playsound();
+          const newNumber = prevState.highnumber > 0 ? prevState.highnumber - 6 : 0;
+          return { highnumber: newNumber < 0 ? 0 : newNumber, lownumber: prevState.lownumber + 6 > 34 ? 34 : prevState.lownumber + 6 };
         });
       };
 
       increaseNumberby1 = () => {
         this.setState((prevState) => {
           // Check if the number is greater than 0 before decreasing it
+          playsound();
           const newNumber = prevState.lownumber > 0 ? prevState.lownumber - 1 : 0;
           return { lownumber: newNumber < 0 ? 0 : newNumber, highnumber: prevState.highnumber + 1 > 34 ? 34 : prevState.highnumber + 1 };
         });
       };
 
-    increaseNumberby5 = () => {
+    increaseNumberby6 = () => {
         this.setState((prevState) => {
             // Check if the number is greater than 0 before decreasing it
-            const newNumber = prevState.lownumber > 0 ? prevState.lownumber - 5 : 0;
-            return { lownumber: newNumber < 0 ? 0 : newNumber, highnumber: prevState.highnumber + 5 > 34 ? 34 : prevState.highnumber + 5 };
+            playsound();
+            const newNumber = prevState.lownumber > 0 ? prevState.lownumber - 6 : 0;
+            return { lownumber: newNumber < 0 ? 0 : newNumber, highnumber: prevState.highnumber + 6 > 34 ? 34 : prevState.highnumber + 6 };
             });
         };
   render() {
@@ -65,9 +83,9 @@ class CIT_111_2 extends Component {
         <Text> </Text>
         <Button
             style={styles.button}
-            title="Add 5"
-            // onPress={() => this.setState({ lownumber: this.state.lownumber + 5, highnumber: this.state.highnumber - 5 })}
-            onPress={this.decreaseNumberby5}
+            title="Add 6"
+            // onPress={() => this.setState({ lownumber: this.state.lownumber + 5, highnumber: this.state.highnumber - 6 })}
+            onPress={this.decreaseNumberby6}
             disabled={this.state.highnumber <= 0}
         />
         <Text> </Text>
@@ -82,9 +100,9 @@ class CIT_111_2 extends Component {
         <Text> </Text>
         <Button
             style={styles.button}
-            title="Subtract 5"
-            // onPress={() => this.setState({ lownumber: this.state.lownumber - 5, highnumber: this.state.highnumber + 5 })}
-            onPress={this.increaseNumberby5}
+            title="Subtract 6"
+            // onPress={() => this.setState({ lownumber: this.state.lownumber - 6, highnumber: this.state.highnumber + 5 })}
+            onPress={this.increaseNumberby6}
             disabled={this.state.lownumber <= 0}
         />
         <Text> </Text>

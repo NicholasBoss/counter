@@ -1,6 +1,19 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native'; // importing components
+import { Audio } from 'expo-av';
 
+let my_button_sound = require('./assets/buttonpress.wav');
+const soundObject = new Audio.Sound();
+var load = false;
+const playsound = async () => {
+    // preload sound
+    if (load === false) {
+      await soundObject.loadAsync(my_button_sound);
+      load = true;
+      // Your sound is playing!
+    } 
+    await soundObject.replayAsync(my_button_sound);
+  }
 // About screen contains the text “You are on the about page” and a button.
 class WDD_130_2 extends Component {
     constructor(props) {
@@ -16,6 +29,7 @@ class WDD_130_2 extends Component {
     decreaseNumberby1 = () => {
         this.setState((prevState) => {
           // Check if the number is greater than 0 before decreasing it
+          playsound();
           const newNumber = prevState.highnumber > 0 ? prevState.highnumber - 1 : 0;
           return { highnumber: newNumber < 0 ? 0 : newNumber, lownumber: prevState.lownumber + 1 > 34 ? 34 : prevState.lownumber + 1 };
         });
@@ -24,6 +38,7 @@ class WDD_130_2 extends Component {
     decreaseNumberby5 = () => {
         this.setState((prevState) => {
           // Check if the number is greater than 0 before decreasing it
+          playsound();
           const newNumber = prevState.highnumber > 0 ? prevState.highnumber - 5 : 0;
           return { highnumber: newNumber < 0 ? 0 : newNumber, lownumber: prevState.lownumber + 5 > 34 ? 34 : prevState.lownumber + 5 };
         });
@@ -32,6 +47,7 @@ class WDD_130_2 extends Component {
       increaseNumberby1 = () => {
         this.setState((prevState) => {
           // Check if the number is greater than 0 before decreasing it
+          playsound();
           const newNumber = prevState.lownumber > 0 ? prevState.lownumber - 1 : 0;
           return { lownumber: newNumber < 0 ? 0 : newNumber, highnumber: prevState.highnumber + 1 > 34 ? 34 : prevState.highnumber + 1 };
         });
@@ -40,6 +56,7 @@ class WDD_130_2 extends Component {
     increaseNumberby5 = () => {
         this.setState((prevState) => {
             // Check if the number is greater than 0 before decreasing it
+            playsound();
             const newNumber = prevState.lownumber > 0 ? prevState.lownumber - 5 : 0;
             return { lownumber: newNumber < 0 ? 0 : newNumber, highnumber: prevState.highnumber + 5 > 34 ? 34 : prevState.highnumber + 5 };
             });
