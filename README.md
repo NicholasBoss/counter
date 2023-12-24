@@ -4,7 +4,7 @@ This app is to help attendance takers anywhere. This app allows you to click a b
 
 Current version: 2.0
 
-[Software Demo Video](https://youtu.be/fGqBNRpuTiM) This is the Old version. A new video will be created soon.
+[Software Demo Video](https://youtu.be/fGqBNRpuTiM) This is a video of the Old version. A new video will be created soon.
 
 # Development Environment
 
