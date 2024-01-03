@@ -40,6 +40,7 @@ class CIT_111_1 extends Component {
     decreaseNumberby5 = () => {
         this.setState((prevState) => {
           // Check if the number is greater than 0 before decreasing it
+          playsound();
           const newNumber = prevState.highnumber > 0 ? prevState.highnumber - 5 : 0;
           return { highnumber: newNumber < 0 ? 0 : newNumber, lownumber: prevState.lownumber + 5 > 34 ? 34 : prevState.lownumber + 5 };
         });
@@ -48,6 +49,7 @@ class CIT_111_1 extends Component {
       increaseNumberby1 = () => {
         this.setState((prevState) => {
           // Check if the number is greater than 0 before decreasing it
+          playsound();
           const newNumber = prevState.lownumber > 0 ? prevState.lownumber - 1 : 0;
           return { lownumber: newNumber < 0 ? 0 : newNumber, highnumber: prevState.highnumber + 1 > 34 ? 34 : prevState.highnumber + 1 };
         });
@@ -56,6 +58,7 @@ class CIT_111_1 extends Component {
     increaseNumberby5 = () => {
         this.setState((prevState) => {
             // Check if the number is greater than 0 before decreasing it
+            playsound();
             const newNumber = prevState.lownumber > 0 ? prevState.lownumber - 5 : 0;
             return { lownumber: newNumber < 0 ? 0 : newNumber, highnumber: prevState.highnumber + 5 > 34 ? 34 : prevState.highnumber + 5 };
             });
@@ -63,7 +66,7 @@ class CIT_111_1 extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text> CIT 111 - 7:45 Bro Christensen</Text>
+        <Text> CIT 111 - 7:45</Text>
         {/* Create high number (max number of students) and decrement when added. Don't let it go below 0*/}
         <Text>Students Absent: {this.state.highnumber}</Text>
         <Text>Students Here: {this.state.lownumber}</Text>

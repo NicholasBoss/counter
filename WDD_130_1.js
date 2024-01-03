@@ -22,7 +22,7 @@ class WDD_130_1 extends Component {
         
         this.state = {
         counter: 0,
-        highnumber: 28,
+        highnumber: 25,
         lownumber: 0,
         };
     }

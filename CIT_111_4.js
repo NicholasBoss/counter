@@ -21,7 +21,7 @@ class CIT_111_4 extends Component {
         
         this.state = {
         counter: 0,
-        highnumber: 33,
+        highnumber: 30,
         lownumber: 0,
         };
     }
