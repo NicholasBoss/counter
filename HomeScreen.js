@@ -10,39 +10,39 @@ class HomeScreen extends Component {
         <Text style={styles.text}>Home page</Text>
         <Button 
             style={styles.button}
-            title="CIT 111 7:45"
+            title="CIT 111 11:30AM"
             onPress={() => this.props.navigation.navigate('CIT_111_1')}
         />
         <Text> </Text>
         <Button 
             style={styles.button}
-            title="CIT 111 9AM"
+            title="CIT 111 12:45PM"
             onPress={() => this.props.navigation.navigate('CIT_111_2')}
         />
         {/* add whitespace */}
         <Text> </Text>
         <Button
             style={styles.button}
-            title="CIT 111 11:30AM"
+            title="CIT 111 9AM"
             onPress={() => this.props.navigation.navigate('CIT_111_3')}
         />
         <Text> </Text>
         <Button
             style={styles.button}
-            title="CIT 111 12:45PM"
+            title="CIT 111 8AM"
             onPress={() => this.props.navigation.navigate('CIT_111_4')}
         />
         <Text> </Text>
         <Button
             style={styles.button}
-            title="WDD 130 7:45AM"
-            onPress={() => this.props.navigation.navigate('WDD_130_1')}
+            title="CIT 111 2PM"
+            onPress={() => this.props.navigation.navigate('CIT_111_5')}
         />
         <Text> </Text>
         <Button
             style={styles.button}
-            title="WDD 130 3:15PM"
-            onPress={() => this.props.navigation.navigate('WDD_130_2')}
+            title="WDD 130 10:15AM"
+            onPress={() => this.props.navigation.navigate('WDD_130_1')}
         />
         {/* // Button has two props i.e title and onPress */}
         {/* // On onPress, we are calling the navigate function on this.props.navigation. */}

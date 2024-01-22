@@ -11,6 +11,7 @@ import CIT_111_1 from './CIT_111_1';// CIT_111_1_2 Screen
 import CIT_111_2 from './CIT_111_2';// CIT_111_1_2 Screen
 import CIT_111_3 from './CIT_111_3';// CIT_111_3_4 Screen
 import CIT_111_4 from './CIT_111_4';// CIT_111_3_4 Screen
+import CIT_111_5 from './CIT_111_5';// CIT_111_3_4 Screen
 import WDD_130_1 from './WDD_130_1';// WDD_130_1_2 Screen
 import WDD_130_2 from './WDD_130_2';// WDD_130_2 Screen
 
@@ -55,15 +56,17 @@ class App extends Component {
             name="CIT_111_4"
             component={CIT_111_4}
           />
+
+          <Stack.Screen
+            name="CIT_111_5"
+            component={CIT_111_5}
+          />
           
           <Stack.Screen
             name="WDD_130_1"
             component={WDD_130_1}
           />
-          <Stack.Screen
-            name="WDD_130_2"
-            component={WDD_130_2}
-          />
+          
         </Stack.Navigator>
       </NavigationContainer>
     );

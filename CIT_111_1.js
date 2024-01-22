@@ -22,7 +22,7 @@ class CIT_111_1 extends Component {
         
         this.state = {
         counter: 0,
-        highnumber: 34,
+        highnumber: 30,
         lownumber: 0,
         };
     }
@@ -33,7 +33,7 @@ class CIT_111_1 extends Component {
           // make a sound when button is pressed
           playsound();
           const newNumber = prevState.highnumber > 0 ? prevState.highnumber - 1 : 0;
-          return { highnumber: newNumber < 0 ? 0 : newNumber, lownumber: prevState.lownumber + 1 > 34 ? 34 : prevState.lownumber + 1 };
+          return { highnumber: newNumber < 0 ? 0 : newNumber, lownumber: prevState.lownumber + 1 > 30 ? 30 : prevState.lownumber + 1 };
         });
       };
 
@@ -42,7 +42,7 @@ class CIT_111_1 extends Component {
           // Check if the number is greater than 0 before decreasing it
           playsound();
           const newNumber = prevState.highnumber > 0 ? prevState.highnumber - 5 : 0;
-          return { highnumber: newNumber < 0 ? 0 : newNumber, lownumber: prevState.lownumber + 5 > 34 ? 34 : prevState.lownumber + 5 };
+          return { highnumber: newNumber < 0 ? 0 : newNumber, lownumber: prevState.lownumber + 5 > 30 ? 30 : prevState.lownumber + 5 };
         });
       };
 
@@ -51,7 +51,7 @@ class CIT_111_1 extends Component {
           // Check if the number is greater than 0 before decreasing it
           playsound();
           const newNumber = prevState.lownumber > 0 ? prevState.lownumber - 1 : 0;
-          return { lownumber: newNumber < 0 ? 0 : newNumber, highnumber: prevState.highnumber + 1 > 34 ? 34 : prevState.highnumber + 1 };
+          return { lownumber: newNumber < 0 ? 0 : newNumber, highnumber: prevState.highnumber + 1 > 30 ? 30 : prevState.highnumber + 1 };
         });
       };
 
@@ -60,13 +60,13 @@ class CIT_111_1 extends Component {
             // Check if the number is greater than 0 before decreasing it
             playsound();
             const newNumber = prevState.lownumber > 0 ? prevState.lownumber - 5 : 0;
-            return { lownumber: newNumber < 0 ? 0 : newNumber, highnumber: prevState.highnumber + 5 > 34 ? 34 : prevState.highnumber + 5 };
+            return { lownumber: newNumber < 0 ? 0 : newNumber, highnumber: prevState.highnumber + 5 > 30 ? 30 : prevState.highnumber + 5 };
             });
         };
   render() {
     return (
       <View style={styles.container}>
-        <Text> CIT 111 - 7:45</Text>
+        <Text> CIT 111 - Brother Robertson</Text>
         {/* Create high number (max number of students) and decrement when added. Don't let it go below 0*/}
         <Text>Students Absent: {this.state.highnumber}</Text>
         <Text>Students Here: {this.state.lownumber}</Text>
@@ -111,7 +111,7 @@ class CIT_111_1 extends Component {
         <Button
             style={styles.button}
             title="Reset Counter"
-            onPress={() => this.setState({ highnumber: 34, lownumber: 0 })}
+            onPress={() => this.setState({ highnumber: 30, lownumber: 0 })}
         />
         <Text> </Text>        
 {/* // On button click, we will navigate to the home page. */}

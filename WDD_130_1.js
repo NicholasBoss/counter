@@ -22,7 +22,7 @@ class WDD_130_1 extends Component {
         
         this.state = {
         counter: 0,
-        highnumber: 25,
+        highnumber: 35,
         lownumber: 0,
         };
     }
@@ -32,7 +32,7 @@ class WDD_130_1 extends Component {
           // Check if the number is greater than 0 before decreasing it
           playsound();
           const newNumber = prevState.highnumber > 0 ? prevState.highnumber - 1 : 0;
-          return { highnumber: newNumber < 0 ? 0 : newNumber, lownumber: prevState.lownumber + 1 > 34 ? 34 : prevState.lownumber + 1 };
+          return { highnumber: newNumber < 0 ? 0 : newNumber, lownumber: prevState.lownumber + 1 > 35 ? 35 : prevState.lownumber + 1 };
         });
       };
 
@@ -41,7 +41,7 @@ class WDD_130_1 extends Component {
           // Check if the number is greater than 0 before decreasing it
           playsound();
           const newNumber = prevState.highnumber > 0 ? prevState.highnumber - 5 : 0;
-          return { highnumber: newNumber < 0 ? 0 : newNumber, lownumber: prevState.lownumber + 5 > 34 ? 34 : prevState.lownumber + 5 };
+          return { highnumber: newNumber < 0 ? 0 : newNumber, lownumber: prevState.lownumber + 5 > 35 ? 35 : prevState.lownumber + 5 };
         });
       };
 
@@ -50,7 +50,7 @@ class WDD_130_1 extends Component {
           // Check if the number is greater than 0 before decreasing it
           playsound();
           const newNumber = prevState.lownumber > 0 ? prevState.lownumber - 1 : 0;
-          return { lownumber: newNumber < 0 ? 0 : newNumber, highnumber: prevState.highnumber + 1 > 34 ? 34 : prevState.highnumber + 1 };
+          return { lownumber: newNumber < 0 ? 0 : newNumber, highnumber: prevState.highnumber + 1 > 35 ? 35 : prevState.highnumber + 1 };
         });
       };
 
@@ -59,7 +59,7 @@ class WDD_130_1 extends Component {
             // Check if the number is greater than 0 before decreasing it
             playsound();
             const newNumber = prevState.lownumber > 0 ? prevState.lownumber - 5 : 0;
-            return { lownumber: newNumber < 0 ? 0 : newNumber, highnumber: prevState.highnumber + 5 > 34 ? 34 : prevState.highnumber + 5 };
+            return { lownumber: newNumber < 0 ? 0 : newNumber, highnumber: prevState.highnumber + 5 > 35 ? 35 : prevState.highnumber + 5 };
             });
         };
   render() {
@@ -110,7 +110,7 @@ class WDD_130_1 extends Component {
         <Button
             style={styles.button}
             title="Reset Counter"
-            onPress={() => this.setState({ highnumber: 34, lownumber: 0 })}
+            onPress={() => this.setState({ highnumber: 35, lownumber: 0 })}
         />
         <Text> </Text>        
 {/* // On button click, we will navigate to the home page. */}
