@@ -36,12 +36,12 @@ class CIT_111_2 extends Component {
         });
       };
 
-    decreaseNumberby6 = () => {
+    decreaseNumberby5 = () => {
         this.setState((prevState) => {
           // Check if the number is greater than 0 before decreasing it
           playsound();
-          const newNumber = prevState.highnumber > 0 ? prevState.highnumber - 6 : 0;
-          return { highnumber: newNumber < 0 ? 0 : newNumber, lownumber: prevState.lownumber + 6 > 36 ? 36 : prevState.lownumber + 6 };
+          const newNumber = prevState.highnumber > 0 ? prevState.highnumber - 5 : 0;
+          return { highnumber: newNumber < 0 ? 0 : newNumber, lownumber: prevState.lownumber + 5 > 36 ? 36 : prevState.lownumber + 5 };
         });
       };
 
@@ -54,12 +54,12 @@ class CIT_111_2 extends Component {
         });
       };
 
-    increaseNumberby6 = () => {
+    increaseNumberby5 = () => {
         this.setState((prevState) => {
             // Check if the number is greater than 0 before decreasing it
             playsound();
-            const newNumber = prevState.lownumber > 0 ? prevState.lownumber - 6 : 0;
-            return { lownumber: newNumber < 0 ? 0 : newNumber, highnumber: prevState.highnumber + 6 > 36 ? 36 : prevState.highnumber + 6 };
+            const newNumber = prevState.lownumber > 0 ? prevState.lownumber - 5 : 0;
+            return { lownumber: newNumber < 0 ? 0 : newNumber, highnumber: prevState.highnumber + 5 > 36 ? 36 : prevState.highnumber + 5 };
             });
         };
   render() {
@@ -83,9 +83,9 @@ class CIT_111_2 extends Component {
         <Text> </Text>
         <Button
             style={styles.button}
-            title="Add 6"
+            title="Add 5"
             // onPress={() => this.setState({ lownumber: this.state.lownumber + 5, highnumber: this.state.highnumber - 6 })}
-            onPress={this.decreaseNumberby6}
+            onPress={this.decreaseNumberby5}
             disabled={this.state.highnumber <= 0}
         />
         <Text> </Text>
@@ -100,9 +100,9 @@ class CIT_111_2 extends Component {
         <Text> </Text>
         <Button
             style={styles.button}
-            title="Subtract 6"
+            title="Subtract 5"
             // onPress={() => this.setState({ lownumber: this.state.lownumber - 6, highnumber: this.state.highnumber + 5 })}
-            onPress={this.increaseNumberby6}
+            onPress={this.increaseNumberby5}
             disabled={this.state.lownumber <= 0}
         />
         <Text> </Text>
